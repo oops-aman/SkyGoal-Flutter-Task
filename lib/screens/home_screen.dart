@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:skygoal_task/constants.dart';
+import 'package:skygoal_task/screens/filter_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -125,49 +126,56 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 30,
             ),
-            Card(
-              child: Container(
-                height: 160,
-                width: 300,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    15,
-                  ),
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage('assets/college.jpeg'),
-                  ),
+            TextButton(
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const FilterScreen(),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(15, 20, 0, 0),
-                      child: Text(
-                        'Top Colleges',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
+              ),
+              child: Card(
+                child: Container(
+                  height: 160,
+                  width: 300,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(
+                      15,
+                    ),
+                    image: const DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage('assets/college.jpeg'),
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(15, 20, 0, 0),
+                        child: Text(
+                          'Top Colleges',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        left: 15.0,
+                      SizedBox(
+                        height: 20,
                       ),
-                      child: Text(
-                        'Search through thousands of accredited\ncolleges and universities online to find\nthe right one for you. Apply in 3 min, and \nconnect with your future.',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 13,
+                      Padding(
+                        padding: EdgeInsets.only(
+                          left: 15.0,
+                        ),
+                        child: Text(
+                          'Search through thousands of accredited\ncolleges and universities online to find\nthe right one for you. Apply in 3 min, and \nconnect with your future.',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -295,6 +303,52 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Account',
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget showDrawer() {
+    return Drawer(
+      width: double.infinity,
+      child: ListView(
+        physics: const NeverScrollableScrollPhysics(),
+        children: [
+          ListTile(
+            title: const Text('Bachelor of Technology'),
+            leading: const Icon(
+              Icons.radio_button_on,
+            ),
+            onTap: () {},
+          ),
+          ListTile(
+            title: const Text('Bachelor of Architecture'),
+            leading: const Icon(
+              Icons.radio_button_off_rounded,
+            ),
+            onTap: () {},
+          ),
+          ListTile(
+            title: const Text('Pharmacy'),
+            leading: const Icon(
+              Icons.radio_button_off_rounded,
+            ),
+            onTap: () {},
+          ),
+          ListTile(
+            title: const Text('Law'),
+            leading: const Icon(
+              Icons.radio_button_off_rounded,
+            ),
+            onTap: () {},
+          ),
+          ListTile(
+            title: const Text('Management'),
+            leading: const Icon(
+              Icons.radio_button_off_rounded,
+            ),
+            onTap: () {},
           ),
         ],
       ),
