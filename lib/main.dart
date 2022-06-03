@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skygoal_task/screens/filter_screen.dart';
+import 'package:skygoal_task/screens/college_screen.dart';
 import 'package:skygoal_task/screens/home_screen.dart';
 
 void main() {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         
         primarySwatch: Colors.blue,
       ),
-      home: const FilterScreen(),
+      home: const HomeScreen(),
     );
   }
 }

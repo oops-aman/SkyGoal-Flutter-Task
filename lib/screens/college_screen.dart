@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:skygoal_task/constants.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class CollegeScreen extends StatefulWidget {
+  const CollegeScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<CollegeScreen> createState() => _CollegeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _CollegeScreenState extends State<CollegeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,151 +123,120 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(
-              height: 30,
+              height: 15,
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 18,
+                  ),
+                  child: Card(
+                    child: SizedBox(
+                      height: 20,
+                      width: 150,
+                      child: Text(
+                        'MVSH Engineering College',
+                        style: TextStyle(fontSize: 12),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 7,
+                ),
+                Card(
+                  child: SizedBox(
+                    height: 20,
+                    width: 150,
+                    child: Text(
+                      'GHJK Engineering College',
+                      style: TextStyle(fontSize: 12),
+                    ),
+                  ),
+                ),
+              ],
             ),
             TextButton(
               onPressed: () {},
               child: Card(
                 child: Container(
-                  height: 160,
+                  height: 130,
                   width: 300,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      15,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(15),
+                      topRight: Radius.circular(15),
                     ),
-                    image: const DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage('assets/college.jpeg'),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/college_1.jpg'),
                     ),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Padding(
-                        padding: EdgeInsets.fromLTRB(15, 20, 0, 0),
-                        child: Text(
-                          'Top Colleges',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(4, 6, 0, 0),
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  primary: Colors.white,
+                                  shape: const CircleBorder(),
+                                  padding: const EdgeInsets.all(3)),
+                              child: const Icon(
+                                Icons.share,
+                                size: 19,
+                                color: Colors.black,
+                              ),
+                              onPressed: () {},
+                            ),
                           ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: 15.0,
-                        ),
-                        child: Text(
-                          'Search through thousands of accredited\ncolleges and universities online to find\nthe right one for you. Apply in 3 min, and \nconnect with your future.',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 13,
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(160, 6, 8, 0),
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.white,
+                                shape: const CircleBorder(),
+                                padding: const EdgeInsets.all(3),
+                              ),
+                              child: const Icon(
+                                Icons.bookmark,
+                                size: 19,
+                                color: Colors.black,
+                              ),
+                              onPressed: () {},
+                            ),
                           ),
-                        ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
                       ),
                     ],
                   ),
                 ),
               ),
             ),
-            const SizedBox(
-              height: 23,
-            ),
-            Card(
-              child: Container(
-                height: 160,
+            Padding(
+              padding: const EdgeInsets.fromLTRB(22, 2, 0, 0),
+              child: SizedBox(
                 width: 300,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    15,
-                  ),
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage('assets/schools.jpg'),
-                  ),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(15, 20, 0, 0),
-                      child: Text(
-                        'Top Schools',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                        ),
+                height: 20,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    const Text(
+                      'GHJK Engineering College',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        left: 15.0,
-                      ),
-                      child: Text(
-                        'Search for the best school for you just\ngot easier! With your advanced school\nSearch, you can easily filter out the\nschools that are fit for you.',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 13,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 23,
-            ),
-            Card(
-              child: Container(
-                height: 160,
-                width: 300,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    15,
-                  ),
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage('assets/exam.jpg'),
-                  ),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(15, 20, 0, 0),
-                      child: Text(
-                        'Exams',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        left: 15.0,
-                      ),
-                      child: Text(
-                        'Find an end to end information about\nthe exams that are happening in India.',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 13,
-                        ),
-                      ),
-                    ),
+                    TextButton.icon(onPressed: () {}, icon: const Icon(Icons.star), label: const Text('4.3')),
                   ],
                 ),
               ),
